@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Aral Neon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/neon.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23260810' stroke='%23D4AF37' stroke-width='2'/%3E%3Ctext x='16' y='21' font-size='12' font-family='monospace' fill='%23D4AF37' text-anchor='middle'%3EAN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="app">
+  <!-- ================= sidebar ================= -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <div class="mark"><b>AN</b></div>
+      <div>
+        <div class="t1">Aral Neon</div>
+        <div class="t2">PROXY PANEL</div>
+      </div>
+    </div>
+    <div class="nav-item on" data-view="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span data-t="nav_dashboard">داشبورد</span>
+    </div>
+    <div class="nav-item" data-view="clients">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.6c2.8.2 5 2 5.8 4.4"/></svg>
+      <span data-t="nav_clients">کلاینت‌ها</span>
+      <span class="tag gold" id="navClientCount" style="margin-inline-start:auto">0</span>
+    </div>
+    <div class="nav-item" data-view="nodes">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="3.6" ry="9"/></svg>
+      <span data-t="nav_nodes">نودها (Cloudflare)</span>
+    </div>
+    <div class="nav-item" data-view="inbounds">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+      <span data-t="nav_inbounds">این‌باند‌های دستی</span>
+      <span class="tag" id="navCoreCount" style="margin-inline-start:auto">0</span>
+    </div>
+    <div class="nav-item" data-view="protocols">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7l9 5 9-5-9-5Z"/><path d="M3 17l9 5 9-5M3 12l9 5 9-5"/></svg>
+      <span data-t="nav_protocols">پروتکل‌ها</span>
+    </div>
+    <div class="nav-item" data-view="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.6 1.6 0 0 0-2.72 1.13V21a2 2 0 1 1-4 0v-.09a1.6 1.6 0 0 0-2.72-1.13l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.6 1.6 0 0 0 4.6 15a1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.09a1.6 1.6 0 0 0 1.51-1.1 1.6 1.6 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.6 1.6 0 0 0 9 4.6a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.09a1.6 1.6 0 0 0 2.72 1.13l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.6 1.6 0 0 0 1.13 2.72H21a2 2 0 1 1 0 4h-.09a1.6 1.6 0 0 0-1.51 1Z"/></svg>
+      <span data-t="nav_settings">تنظیمات</span>
+    </div>
+    <div class="foot">
+      <span data-t="footer">یک پورت، همهٔ پروتکل‌ها</span><br>
+      <b>ARAL NEON</b> v1.0
+    </div>
+  </aside>
+
+  <!-- ================= main ================= -->
+  <main class="main">
+    <div class="topbar">
+      <div class="row-flex">
+        <button class="burger" id="burger" aria-label="menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div>
+          <h1 id="viewTitle">داشبورد</h1>
+          <div class="sub" id="viewSub">نمای کلی سیستم</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn ghost sm" id="btnLang">EN</button>
+        <button class="btn ghost sm" id="btnTheme" title="theme">☾</button>
+        <button class="btn ghost sm" id="btnLogout" data-t="logout">خروج</button>
+      </div>
+    </div>
+
+    <!-- ============ dashboard ============ -->
+    <section class="view on" id="view-dashboard">
+      <div class="grid dials" id="dials"></div>
+      <div class="grid cols-2" style="margin-top:16px">
+        <div class="card">
+          <div class="eyebrow" data-t="live_traffic">ترافیک زنده</div>
+          <div class="chart-wrap"><canvas id="chart"></canvas></div>
+          <div class="row-flex" style="justify-content:space-between;margin-top:8px">
+            <span class="tiny"><i style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--accent);margin-inline-end:5px"></i><span data-t="upload">آپلود</span> <b class="mono" id="liveUp">0</b></span>
+            <span class="tiny"><i style="display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--primary);margin-inline-end:5px"></i><span data-t="download">دانلود</span> <b class="mono" id="liveDown">0</b></span>
+            <span class="tiny"><span data-t="active_conn">اتصالات فعال</span> <b class="mono" id="activeConn">0</b></span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow" data-t="summary">خلاصه</div>
+          <div id="summaryLines" style="margin-top:6px"></div>
+        </div>
+      </div>
+      <div class="grid cols-3" style="margin-top:16px">
+        <div class="card"><div class="eyebrow" data-t="today">امروز</div><div class="big-num mono" id="dayTraffic" style="margin-top:8px">0 B</div></div>
+        <div class="card"><div class="eyebrow" data-t="month">این ماه</div><div class="big-num mono" id="monthTraffic" style="margin-top:8px">0 B</div></div>
+        <div class="card"><div class="eyebrow" data-t="all_time">کل</div><div class="big-num mono" id="allTimeTraffic" style="margin-top:8px">0 B</div></div>
+      </div>
+    </section>
+
+    <!-- ============ clients ============ -->
+    <section class="view" id="view-clients">
+      <div class="notice" data-t="clients_notice">
+        هر کلاینت UUID اختصاصی، سهمیه ترافیک و تاریخ انقضای خودش را دارد. سهمیه و انقضا به‌صورت زنده اعمال می‌شوند.
+      </div>
+      <div class="row-flex" style="margin-bottom:14px">
+        <button class="btn" id="btnAddClient">+ <span data-t="add_client">کلاینت جدید</span></button>
+        <div class="spacer"></div>
+        <input class="ltr" id="clientSearch" placeholder="search..." style="max-width:220px">
+      </div>
+      <div class="card" style="padding:0">
+        <div class="table-wrap" style="border:0">
+          <table>
+            <thead>
+              <tr>
+                <th data-t="th_name">نام / تگ</th>
+                <th data-t="th_status">وضعیت</th>
+                <th data-t="th_traffic">ترافیک</th>
+                <th data-t="th_expiry">انقضا</th>
+                <th data-t="th_sub">سابسکریپشن</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="clientsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ nodes ============ -->
+    <section class="view" id="view-nodes">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="eyebrow" data-t="cf_domain">دامنه پشت Cloudflare</div>
+          <div class="field" style="margin-top:10px">
+            <input class="ltr" id="cfDomain" placeholder="sub.example.com">
+          </div>
+          <div class="row-flex">
+            <button class="btn sm" id="btnVerifyDomain" data-t="verify">تأیید دامنه</button>
+            <span class="tag" id="domainTag"></span>
+          </div>
+          <div class="tiny" style="margin-top:8px" data-t="domain_hint">
+            دامنه باید در Cloudflare پروکسی (ابر نارنجی) شده باشد تا پورت‌های جایگزین کار کنند.
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow" data-t="gen_settings">تنظیمات تولید</div>
+          <div class="field" style="margin-top:10px">
+            <label data-t="clean_ips">IPهای تمیز (اختیاری، هر خط یک آدرس)</label>
+            <textarea class="ltr" id="cleanIPs" rows="3" placeholder="104.17.x.x&#10;172.64.x.x"></textarea>
+          </div>
+          <div class="row-flex" style="gap:8px">
+            <div class="field" style="flex:1;margin:0">
+              <label data-t="prefix">پیشوند نام</label>
+              <input class="ltr" id="nodePrefix" value="Neon">
+            </div>
+            <div class="field" style="flex:1;margin:0">
+              <label data-t="max_nodes">حداکثر نود</label>
+              <input class="ltr" id="maxNodes" type="number" value="150" min="1" max="500">
+            </div>
+          </div>
+          <div class="eyebrow" style="margin-top:12px" data-t="ports">پورت‌های HTTPS کلادفلر</div>
+          <div class="row-flex" id="portToggles" style="margin-top:6px"></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="row-flex">
+          <div>
+            <div class="eyebrow" data-t="node_set">مجموعه نود</div>
+            <div id="nodesetInfo" class="muted" style="margin-top:4px"></div>
+          </div>
+          <div class="spacer"></div>
+          <button class="btn" id="btnGenerate" data-t="generate">تولید نودها</button>
+          <button class="btn ghost" id="btnSelfTest" data-t="selftest">تست از سرور</button>
+          <button class="btn danger" id="btnDeleteNodes" data-t="delete_nodes">حذف</button>
+        </div>
+        <div id="nodesList" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <!-- ============ inbounds ============ -->
+    <section class="view" id="view-inbounds">
+      <div class="notice" data-t="inbounds_notice">
+        این‌باند‌های دستی (حداکثر ۴): پروتکل و ترنسپورت دلخواه روی همان پورت اصلی. برای نودهای Cloudflare از بخش «نودها» استفاده کنید.
+      </div>
+      <div class="row-flex" style="margin-bottom:14px">
+        <button class="btn" id="btnAddInbound">+ <span data-t="add_inbound">این‌باند جدید</span></button>
+      </div>
+      <div class="card" style="padding:0">
+        <div class="table-wrap" style="border:0">
+          <table>
+            <thead>
+              <tr>
+                <th data-t="th_remark">نام</th>
+                <th data-t="th_protocol">پروتکل</th>
+                <th data-t="th_network">ترنسپورت</th>
+                <th data-t="th_path">مسیر</th>
+                <th data-t="th_status">وضعیت</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="inboundsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ protocols ============ -->
+    <section class="view" id="view-protocols">
+      <div class="notice" data-t="protocols_notice">
+        هر پروتکل را می‌توانید جداگانه فعال/غیرفعال کنید. تغییرات بلافاصله روی موتورها اعمال می‌شود.
+      </div>
+      <div class="grid cols-3" id="protoGrid"></div>
+    </section>
+
+    <!-- ============ settings ============ -->
+    <section class="view" id="view-settings">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="eyebrow" data-t="security">امنیت</div>
+          <div class="field" style="margin-top:12px">
+            <label data-t="new_password">رمز عبور جدید</label>
+            <input class="ltr" id="newPw" type="password" minlength="8" placeholder="••••••••">
+          </div>
+          <button class="btn sm" id="btnChangePw" data-t="change_password">تغییر رمز</button>
+          <div class="stat-line" style="margin-top:14px"><span>Certificate pin (pcs)</span><b class="mono" id="certPin">—</b></div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Telegram</div>
+          <div class="row-flex" style="margin-top:10px">
+            <span data-t="tg_enable" style="font-size:13px">فعال‌سازی ربات هشدار</span>
+            <div class="spacer"></div>
+            <label class="switch"><input type="checkbox" id="tgEnabled"><span class="sl"></span></label>
+          </div>
+          <div class="field" style="margin-top:10px">
+            <label>Bot Token</label>
+            <input class="ltr" id="tgToken" placeholder="123456:ABC-DEF...">
+          </div>
+          <div class="field">
+            <label>Chat ID</label>
+            <input class="ltr" id="tgChat" placeholder="-100123456789">
+          </div>
+          <div class="row-flex">
+            <button class="btn sm" id="btnTgVerify" data-t="tg_verify">اتصال و تست</button>
+            <button class="btn ghost sm" id="btnTgBackup" data-t="tg_backup">ارسال بکاپ</button>
+          </div>
+          <div class="tiny" style="margin-top:8px" data-t="tg_hint">هشدارها: اتمام سهمیه، انقضا، لاگین، خرابی موتور + بکاپ روزانه.</div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow" data-t="backup">بکاپ / بازیابی</div>
+          <div class="row-flex" style="margin-top:12px">
+            <button class="btn sm" id="btnBackupDl" data-t="download_backup">دانلود بکاپ (JSON)</button>
+            <label class="btn ghost sm" style="cursor:pointer">
+              <span data-t="restore_backup">بازیابی از فایل</span>
+              <input type="file" id="backupFile" accept=".json" style="display:none">
+            </label>
+          </div>
+          <div class="tiny" style="margin-top:8px" data-t="backup_hint">بکاپ شامل کلاینت‌ها، نودها، تنظیمات و سهمیه‌هاست (توکن تلگرام حذف می‌شود).</div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow" data-t="system">سیستم</div>
+          <div id="sysLines" style="margin-top:8px"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============ modal ============ -->
+<div class="modal-back" id="modalBack">
+  <div class="card modal" id="modalBox"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

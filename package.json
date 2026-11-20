@@ -1,0 +1,16 @@
+{
+  "name": "aral-neon",
+  "version": "1.0.0",
+  "description": "Aral Neon — one-port multi-protocol proxy panel (VLESS/VMess/Trojan/SS + WS/gRPC/HTTPUpgrade/XHTTP, dual engine sing-box + Xray) with client management, Cloudflare node generator and smart subscriptions.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "private": true
+}
